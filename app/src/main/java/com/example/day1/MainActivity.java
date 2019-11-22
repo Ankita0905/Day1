@@ -25,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Toast.makeText(MainActivity.this,"WELCOME", Toast.LENGTH_SHORT).show();
+                if(edtEmail.getText().toString().equals("admin") && edtPassword.getText().toString().equals("admin")){
+
+                    Toast.makeText(getApplicationContext(),
+                            "Redirecting...",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), "Wrong Credentials",Toast.LENGTH_SHORT).show();
             }
         });
 
